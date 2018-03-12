@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="JS/calc.js">
+        
+    </script>
+</head>
+<body>
+    <h1>Salary Calculator</h1>
+    <p>Salary is <span id="s1"></span></p>
+    <table border="2">
+        <tr>
+            <td><label for="Enter salary">Enter Salary</label></td>
+            <td><input type="number" id="tf1" onkeyup="sal()"></td>
+        </tr>
+        <tr>
+            <td><button onclick="print()">Calculate</button></td>
+            <td><button onclick="clear()">Clear All</button></td>
+        </tr>
+        <tr>
+            <td><label for="">HRA</label></td>
+            <td><span id="hra"></span></td></tr>
+            <tr></tr><td><label for="">DA</label></td>
+            <td><span id="da"></span></td></tr>
+            <tr></tr><td><label for="">TA</label></td>
+            <td><span id="ta"></span></td></tr>
+            <tr></tr><td><label for="">PF</label></td>
+            <td><span id="pf"></span></td></tr>
+            <tr></tr><td><label for="">MA</label></td>
+            <td><span id="ma"></span></td></tr>
+            <tr></tr><td><label for="">Gross</label></td>
+            <td><span id="gross"></span></td></tr>
+            <tr></tr><td><label for="">Tax</label></td>
+            <td><span id="tax"></span></td></tr>
+            <tr></tr><td><label for="">Net</label></td>
+            <td><span id="net"></span></td>
+        </tr>
+    </table>
+</body>
+</html>
