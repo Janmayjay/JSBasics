@@ -24,13 +24,52 @@
     </table>
     </div>
     <div id="menuDiv">
-        <button id="vegetable">Vegetables</button>
-        <button id="fruit">Fruits</button>
+        <button id="vegetables">Vegetables</button>
+        <button id="fruits">Fruits</button>
         <button id="fastFood">Fast Food</button>
     </div>
     <div id="itemsDiv">
         
-        <button id="back">Back</button>
+        <button id="cart">Show Cart</button>
+        <fieldset >
+            <legend>Items</legend>
+            <table border="3px">
+                <thead>
+                    <tr>
+                        <td>Item Id</td>
+                        <td>Item Name</td>
+                        <td>Item Price</td>
+                        <td>Item Pic</td>
+                        <td>Item Quantity</td>
+                        <td>Discount</td>
+                    </tr>
+                </thead>
+                <tbody id="showItemTable"></tbody>
+            </table>
+        </fieldset>
+        <br><br>
+        <button id="back">Back to Menu</button>
+    </div>
+    <div id="cartDiv">
+        <fieldset>
+            <legend><b>CART</b> </legend>
+            <center><table border="5px">
+                <thead>
+                    <tr>
+                        <td>Item Id</td>
+                        <td>Item Name</td>
+                        <td>Item Price</td>
+                        <td>Item Pic</td>
+                        <td>Discount</td>
+                        <td>Net Price</td>
+                    </tr>
+                </thead>
+                <tbody id="cartBody"></tbody>
+            </table></center><br><br>
+            <span><center> Your Bill is of Rs. <span id="bill"></span></center></span>
+        </fieldset>
+        <br><br>
+        <button id="backCart">Back to Item List</button>
     </div>
 </body>
 </html>
