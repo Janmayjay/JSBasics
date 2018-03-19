@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/controller.js"></script>
+</head>
+<body>
+    <div id="loginDiv">
+        <table border="5px">
+            <tr>
+                <td>User Name</td>
+                <td><input type="text" id="userName" placeholder="Enter your User Name"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td><button id="logIn">Log In</button></td>
+                <td><button id="register">Register</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="menuDiv">
+        <center><span id="menuItems"></span> </center>
+    </div>
+    <div id="questionDiv">
+        <fieldset>
+            <center>
+                <legend><b>Test</b></legend>
+            </center>
+            <table border="5px">
+                <tr>
+                    <td colspan="4" id="colorCircles">bc</td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="question">question</td>
+                    <td rowspan="5" id="timer">timer</td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="A">a</td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="B">b</td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="C">c</td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="D">d</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <table>
+                            <tr>
+                                <td>
+                                    <button id="previous">Previous</button>
+                                    <button id="skip">Skip</button>
+                                    <button id="next">Next</button>
+                                    <button id="finish">Finish</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    <div id="resultDiv"></div>
+</body>
+</html>
