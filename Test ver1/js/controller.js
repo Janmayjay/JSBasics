@@ -1,11 +1,12 @@
 window.addEventListener("load",bindEvents);
-const url="https://raw.githubusercontent.com/Janmayjay/JSBasics/master/test.json";var idNo=0;
+const url="https://raw.githubusercontent.com/Janmayjay/JSBasics/master/test1.json";var idNo=0;
+//var questionId=0;
 function bindEvents(){
     document.querySelector("#loginDiv").style.display="block";
     document.querySelector("#menuDiv").style.display="none";
     document.querySelector("#questionDiv").style.display="none";
     document.querySelector("#resultDiv").style.display="none";
-    document.querySelector("#logIn").addEventListener("click",showMenu);
+    document.querySelector("#logIn").addEventListener("click",userLogin);
     document.querySelector("#previous").addEventListener("click",previousQuestion);
     document.querySelector("#skip").addEventListener("click",skipQuestion);
     document.querySelector("#next").addEventListener("click",nextQuestion);
@@ -43,22 +44,31 @@ function showMenu(){
         divMenu.type="button";
         divMenu.value=subjects.tests[i].subject;
         divMenu.id=subjects.tests[i].subject;
-        divMenu.onclick=showQuestions(i);
+        divMenu.onclick=function(){showQuestions(i)};
+        //divMenu.setAttribute("frameNo",i);
         var insertMenu=document.querySelector("#menuItems");
         insertMenu.appendChild(divMenu);
+        testID=i;
         //console.log(i);
         //console.log(divMenu.id);
     }
 }
-
-function showQuestions(questionId){
-    var idButton=this.id;
+var i,j=0;var idButton,testID=0;
+function showQuestions(){
+    //idButton=this.id;
+    //console.log(idButton);
+    //console.log(document.querySelector("#"+this.id).getAttribute("frameNo"));
+    //if(document.querySelector("").getAttribute("frameNo"))
+    //i=questionId;
+    //idButton=this.id;
     document.querySelector("#menuDiv").style.display="none";
     document.querySelector("#questionDiv").style.display="block";
     //console.log(idButton);
+    
     var subjects=JSON.parse(localStorage.items);
-    var questionList=subjects.tests[questionId].questions;
-    for(let j=0;j<questionList.length;j++){
+    console.log(subjects.tests[testID],j);
+    var questionList=subjects.tests[testID].questions;
+    //for(let j=0;j<questionList.length;j++){
         document.querySelector("#A").innerText="";
         document.querySelector("#B").innerText="";
         document.querySelector("#C").innerText="";
@@ -72,22 +82,28 @@ function showQuestions(questionId){
         // document.querySelector("#timer").innerHTML=document.querySelector("input[name='options']").value;
         document.querySelector("#question").innerText=questionList[j].question;
         //j=idNo;
-    }
+    //}
 }
 
-function nextQuestion(idNo){
-    console.log(idNo,"next");
-    return idNo++;
+function nextQuestion(){
+    console.log(j,"next");
+    j++;
+    showQuestions();
+    //return idNo++;
 }
 
-function previousQuestion(idNo){
-    console.log(idNo,"previous");
-    return idNo--;
+function previousQuestion(){
+    console.log(j,"previous");
+    j--;
+    showQuestions();
+    //return idNo--;
 }
 
-function skipQuestion(idNo){
-    console.log(idNo,"skip");
-    return idNo++;
+function skipQuestion(i){
+    console.log(j,"skip");
+    j++;
+    showQuestions();
+    //return idNo++;
 }
 
 function finishTest(){
